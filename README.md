@@ -29,4 +29,4 @@ Training **data augment.py** to synthesize features, users also can use their ow
 
 Users can use **supplementary feature.py** writing synthesized features to .csv files.
 
-Then users use **location predict.py** to predict subchloroplast localization.
+Then users integrate original and synthetic features and use **location predict.py** to predict subchloroplast localization.
