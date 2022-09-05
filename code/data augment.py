@@ -4,14 +4,11 @@
 # In[2]:
 
 
-# -*- coding: utf-8 -*-
 import torch.nn as nn
 
 
 # In[3]:
 
-
-# model
 
 class Discrimnator(nn.Module):
     def __init__(self):
@@ -56,8 +53,6 @@ class Generator(nn.Module):
 
 # In[3]:
 
-
-# train
 
 import torch
 import torch.autograd as autograd
@@ -169,7 +164,6 @@ class Trainer:
 # In[4]:
 
 
-# dataset
 import numpy as np
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader
@@ -208,8 +202,6 @@ def train_dataloader(path, batch_size=4, num_workers=0,label=1):
 # In[23]:
 
 
-# main
-
 import torch
 import torch.optim as optim
 from torch.utils.data import DataLoader
@@ -233,41 +225,12 @@ betas = (0.9, 0.99)
 g_optimizer = optim.Adam(generator.parameters(), lr=initial_lr, betas=betas)
 d_optimizer = optim.Adam(discriminator.parameters(), lr=initial_lr, betas=betas)
 
-epochs = 2000  
+epochs = 5000  
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 trainer = Trainer(generator, g_optimizer, discriminator, d_optimizer, device=device)
 trainer.train(dataloader, epochs)
 
-name = '0_2000'
+name = '0_5000'
 torch.save(trainer.G.state_dict(), './gen_' + name + '.pt')
 torch.save(trainer.D.state_dict(), './dis_' + name + '.pt')
-
-
-# In[9]:
-
-
-import torch
-# from model import Generator
-import csv
-
-num = 500
-batch_size = 128
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-generator = Generator().to(device)
-print(generator)
-state_dict = torch.load('./gen_2000.pt')
-generator.load_state_dict(state_dict)
-f = open('results.csv', 'w', encoding='utf-8', newline="")
-csv_write = csv.writer(f)
-for i in range(num):
-    rand = 2 * (torch.rand(1, 128, device=device) - 0.5)
-    one_dimension = generator(rand).cpu().detach().numpy()[0].tolist()
-    one_dimension = [str(i) for i in one_dimension]
-    csv_write.writerow(one_dimension)
-
-
-# In[ ]:
-
-
-
 
