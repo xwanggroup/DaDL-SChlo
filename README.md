@@ -37,9 +37,15 @@ Then mixing synthetic and original samples to prediction.
 python prediction.py
 ```
 
+In addition, users extract deep learning features.
+
+```
+python deep feature.py
+```
+
 ### Notes
 
-Users learn deep learning features from ProBERT [https://github.com/agemagician/ProtTrans/blob/master/Embedding/PyTorch/Basic/ProtBert.ipynb] and then can extract features using **deep feature.py**
+Users learn deep learning features from ProBERT [https://github.com/agemagician/ProtTrans/blob/master/Embedding/PyTorch/Basic/ProtBert.ipynb]   
 
 Users extract handcrafted features from ncbi-blast [https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/] or Pse-in-One2.0 [http://bliulab.net/Pse-in-One2.0/PROTEIN/ACC-PSSM/]
 
