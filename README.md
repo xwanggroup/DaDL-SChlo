@@ -4,6 +4,7 @@ DaDL-SChlo is a predictor of protein subchloroplast localization.
 ## Datasets
 * **Datasets/MSchlo578.fasta** is the benchmark dataset of multi-label subchloroplast protein sequences.
 * **Datasets/Novel** is the indenpendent test dataset of multi-label subchloroplast protein sequences.
+
     > **Datasets/Novel/new_envelope.fasta** is a protein sequence dataset of the envelope location in the Novel dataset.
     > 
     > **Datasets/Novel/new_stroma.fasta** is a protein sequence dataset of the stroma location in the Novel dataset.
@@ -47,7 +48,8 @@ python deep feature.py
 
 Users learn deep learning features from ProBERT [https://github.com/agemagician/ProtTrans/blob/master/Embedding/PyTorch/Basic/ProtBert.ipynb]   
 
-Users extract handcrafted features from ncbi-blast [https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/] or Pse-in-One2.0 [http://bliulab.net/Pse-in-One2.0/PROTEIN/ACC-PSSM/]
+Users extract handcrafted features from ncbi-blast [https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/] 
+or Pse-in-One2.0 [http://bliulab.net/Pse-in-One2.0/PROTEIN/ACC-PSSM/]
 
 Users also can use their own data to train this data augmentation modules.
 
