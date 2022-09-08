@@ -28,7 +28,7 @@ The code has been tested running under Python 3.7.8. The required packages are a
 ```
 git clone https://github.com/xwanggroup/DaDL-SChlo
 cd DaDL-SChlo/code
-python data augmentation.py   ####using WGAN-gp to generate synthetic samples
+python data augmentation.py        ####using WGAN-gp to generate synthetic samples
 python supplementary feature.py    ####writing synthetic samples to the supplemental dataset
 ```
 Users train the feature samples of each subchloroplast position independently.
