@@ -1,0 +1,4 @@
+new_envelope
+new_stroma
+new_thylakoid_lumen
+new_thylakoid_membrane
